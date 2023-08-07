@@ -1,13 +1,9 @@
-package bank;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.*;
-
 import javax.swing.*;
-
 public class depositAmount {
 	//creating objects
 	Connection con=null;
@@ -39,7 +35,7 @@ public class depositAmount {
 				try {
 					//connecting to database
 					Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-					con=DriverManager.getConnection("jdbc:mysql://127.0.0.1/bank","root","bobby");
+					con=DriverManager.getConnection("jdbc:mysql://127.0.0.1/bank","root","root");
 					insert=con.prepareStatement("SELECT c.accountno,a.balance FROM customer c,account a where a.accountno=c.accountno and c.accountno=?");
 					insert.setString(1,accno.getText());
 					rs=insert.executeQuery();
