@@ -1,4 +1,3 @@
-package bank;
 import java.awt.event.*;
 import java.sql.*;
 import java.util.regex.Matcher;
@@ -49,7 +48,7 @@ public class AccountDetails {
 				try {
 					//connecting to database
 					Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-					con=DriverManager.getConnection("jdbc:mysql://127.0.0.1/bank","root","bobby");
+					con=DriverManager.getConnection("jdbc:mysql://127.0.0.1/bank","root","root");
 					//registering details
 					String mobiletxt=Mobile.getText();
 					if(isValidMobileNo(mobiletxt)) {
