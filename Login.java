@@ -1,9 +1,6 @@
-package bank;
-
 import java.awt.event.*;
 import java.sql.*;
 import javax.swing.*;
-
 public class Login {
 	//creating objects
 	Connection con=null;
@@ -36,7 +33,7 @@ public class Login {
 				try {
 					//jdbc connection
 					Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-					con=DriverManager.getConnection("jdbc:mysql://127.0.0.1/bank","root","bobby");
+					con=DriverManager.getConnection("jdbc:mysql://127.0.0.1/bank","root","root");
 					//checking for login details in database
 					insert=con.prepareStatement("select*from admin where username=? and password=?");
 					insert.setString(1,user.getText());
